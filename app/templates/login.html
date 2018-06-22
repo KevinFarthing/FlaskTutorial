@@ -1,0 +1,28 @@
+<!-- fields defined in LoginForm (as defined in forms.py) know how to render themselves as html-->
+{% extends "base.html" %}
+<!-- stuff inside block content tags are inserted into base.html -->
+{% block content %}
+    <h1>Sign In</h1>
+<!-- In fact, the form validators generate these descriptive error messages already, so all that is missing is some additional logic in the template to render them. -->
+    <!-- use novalidate so only server side validation occurs. necessary for now, since we want to test server side validation separately. -->
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+<!-- As a general rule, any fields that have validators attached will have error messages added under form.<field_name>.errors. -->
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
