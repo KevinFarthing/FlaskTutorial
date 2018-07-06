@@ -1,0 +1,114 @@
+2018-06-27 17:44:38,669 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-06-27 17:59:14,755 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-06-27 18:16:22,411 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-06-27 18:23:40,588 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-06-28 09:51:50,997 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 15:14:04,262 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 15:14:25,258 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 15:15:00,342 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 15:22:02,541 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 15:22:38,015 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:32:52,124 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:33:29,776 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:35:49,003 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:36:14,929 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:37:38,264 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:45:55,204 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-02 17:46:49,160 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-03 16:05:22,896 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-03 16:28:49,597 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:58]
+2018-07-03 16:28:53,084 ERROR: Exception on / [GET], [in C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 20, in index
+    if form.validate_on_submit():
+TypeError: validate_on_submit() missing 1 required positional argument: 'self'
+2018-07-03 16:28:56,575 ERROR: Exception on /index [GET], [in C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 20, in index
+    if form.validate_on_submit():
+TypeError: validate_on_submit() missing 1 required positional argument: 'self'
+2018-07-03 16:28:57,787 ERROR: Exception on /index [GET], [in C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 20, in index
+    if form.validate_on_submit():
+TypeError: validate_on_submit() missing 1 required positional argument: 'self'
+2018-07-03 16:29:06,348 ERROR: Exception on /index [GET], [in C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 20, in index
+    if form.validate_on_submit():
+TypeError: validate_on_submit() missing 1 required positional argument: 'self'
+2018-07-03 16:29:07,562 ERROR: Exception on /index [GET], [in C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Kevin\Anaconda3\envs\flaskenv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 20, in index
+    if form.validate_on_submit():
+TypeError: validate_on_submit() missing 1 required positional argument: 'self'

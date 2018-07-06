@@ -29,7 +29,7 @@ class LoginForm(FlaskForm):
 # most flask extensions use a flask_<name> convention for their top level import symbol
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Username',validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired()])
     about_me = TextAreaField('About me', validators=[Length(min=0,max=140)])
     submit = SubmitField('Submit')
 
@@ -42,4 +42,8 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('That username is already taken')
-                # THIS FUCKER AIN'T SHOWIN FIX THAT
+                # THIS FUCKER AIN'T SHOWIN FIX THAT - fixed, secret key authenticator was outside the form iirc
+
+class PostForm(FlaskForm):
+    post = TextAreaField("What's on your mind?", validators=[DataRequired(),Length(min=1, max=140)])
+    submit = SubmitField('Submit')

@@ -11,14 +11,20 @@
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}
             {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>{{ error }}</strong>
+            </div>
             {% endfor %}
         </p>
         <p>
             {{ form.password.label }}<br>
             {{ form.password(size=32) }}
             {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>{{ error }}</strong>
+            </div>
 <!-- As a general rule, any fields that have validators attached will have error messages added under form.<field_name>.errors. -->
             {% endfor %}
         </p>
