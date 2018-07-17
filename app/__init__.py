@@ -3,6 +3,7 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 # RotatingFileHandler is a class, consistently makes new log files when one grows too large and stores previous ones in a quantity you give it
 import os
 from flask import Flask
+from flask import Request
 # Flask class from flask module-ish
 
 # app = Flask(__name__) # refactored using config import lines
@@ -13,6 +14,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from config import Config
+from flask_mail import Mail
+from flask_bootstrap import Bootstrap
+from flask_moment import moment
+from flask_babel import Babel
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -20,6 +25,10 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login' #named reference to the login view, like url_for()
+mail = Mail(app)
+bootstrap = Bootstrap(app)
+moment = Moment(app)
+babel = Babel(app)
 
 # test with '(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025'
 # creates testing server that prints to console :D
@@ -57,7 +66,22 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
 
+@babel.localeselector
+def get_locale():
+    # return 'es' #force return spanish for test
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+# accept language assigns preference between 1 and 0 to each language, and gets the most preferred option from the website
+# da, en-gb;q=.8
+# ^^^gives danish the default value of 1, english .8
+# oh fuck that, you have to mark all texts needing translation BY HAND?
+# babel then scans all files and extracts those texts into a separate translation file using the gettext tool
+# wrap them in a function call that as convention is called _()
+# from flask_babel import _
+# _('text needing to be translated. jesus.')
+# better. use import lazy_gettext as _l
+# delays the translation until any string interpolation is finished?
 
-
+# pybabel extract -F babel.cfg -k _l -o messages.pot .
+# pybabel update -i messages.pot -d app/translations
 
 from app import routes, models, errors

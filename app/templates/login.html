@@ -1,35 +1,19 @@
 <!-- fields defined in LoginForm (as defined in forms.py) know how to render themselves as html-->
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 <!-- stuff inside block content tags are inserted into base.html -->
-{% block content %}
+{% block app_content %}
     <h1>Sign In</h1>
 <!-- In fact, the form validators generate these descriptive error messages already, so all that is missing is some additional logic in the template to render them. -->
     <!-- use novalidate so only server side validation occurs. necessary for now, since we want to test server side validation separately. -->
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-            {% for error in form.username.errors %}
-            <div class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <strong>{{ error }}</strong>
-            </div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-            {% for error in form.password.errors %}
-            <div class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <strong>{{ error }}</strong>
-            </div>
-<!-- As a general rule, any fields that have validators attached will have error messages added under form.<field_name>.errors. -->
-            {% endfor %}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
+<div class="row">
+    <div class="col-md-4">
+        {{ wtf.quick_form(form)}}
+    </div>
+</div>
+    <p>
+        Forgot Your Password?
+        <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+    </p>
     <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
 {% endblock %}

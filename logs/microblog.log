@@ -102,3 +102,6 @@ Traceback (most recent call last):
   File "C:\Users\Kevin\Documents\flask mega tutorial\app\routes.py", line 87, in user
     page = requests.args.get('page', 1, type=int)
 NameError: name 'requests' is not defined
+2018-07-09 17:37:48,703 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:60]
+2018-07-09 19:04:29,841 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:60]
+2018-07-09 19:33:24,505 INFO: Microblog startup, [in C:\Users\Kevin\Documents\flask mega tutorial\app\__init__.py:62]
